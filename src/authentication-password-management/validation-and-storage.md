@@ -128,7 +128,7 @@ standards reviewed and approved by experts. It is therefore important to use
 them instead of trying to re-invent the wheel.
 
 In the case of password storage, the hashing algorithms recommended by
-[OWASP][2] are [`bcrypt`][2], [`PDKDF2`][3], [`Argon2`][4] and [`scrypt`][5].
+[OWASP][2] are [`bcrypt`][3], [`PDKDF2`][4], [`Argon2`][5] and [`scrypt`][6].
 Those take care of hashing and salting passwords in a robust way. Go authors
 provide an extended package for cryptography, that is not part of the standard
 library. It provides robust implementations for most of the aforementioned
@@ -217,7 +217,7 @@ options/parameters, better delegating the task to specialized third-party
 package with safe defaults. Always opt for an actively maintained package and
 remind to check for known issues.
 
-* [passwd][6] - A Go package that provides a safe default abstraction for
+* [passwd][7] - A Go package that provides a safe default abstraction for
   password hashing and comparison. It has support for original go bcrypt
   implementation, argon2, scrypt, parameters masking and key'ed (uncrackable)
   hashes.
@@ -227,6 +227,7 @@ remind to check for known issues.
 [1]: ../cryptographic-practices/pseudo-random-generators.md
 [2]: https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet
 [3]: https://godoc.org/golang.org/x/crypto/bcrypt
-[4]: https://github.com/p-h-c/phc-winner-argon2
-[5]: https://godoc.org/golang.org/x/crypto/pbkdf2
-[6]: https://github.com/ermites-io/passwd
+[4]: https://godoc.org/golang.org/x/crypto/pbkdf2
+[5]: https://github.com/p-h-c/phc-winner-argon2
+[6]: https://pkg.go.dev/golang.org/x/crypto/scrypt
+[7]: https://github.com/ermites-io/passwd
